@@ -1,7 +1,10 @@
-import {createTweet} from './tweet-controller.js'
+import {createTweet, getTweet} from './tweet-controller.js'
 import {toggleLike} from './like-controller.js'
+import { createComment } from './comment-controller.js'
 
 export {
     createTweet,
-    toggleLike
+    toggleLike,
+    createComment,
+    getTweet
 }
