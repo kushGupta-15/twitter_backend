@@ -8,7 +8,7 @@
 - Anyone who follows you can comment on a post/tweet
 - Anyone who follows you can like on a post/tweet
 - We can comment on a comment
-- We  can like any comment also
+- We can like any comment also
 - Retweeting
 
 - User profile
