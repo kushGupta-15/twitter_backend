@@ -32,9 +32,9 @@ class CrudRepository {
             throw error;
         }
     }
-    async getAll(id) {
+    async getAll() {
         try {
-            const result = await this.model.findById({});
+            const result = await this.model.find({});
             return result;
         } catch (error) {
             console.log("Something went wrong in crud-repo");
