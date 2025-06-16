@@ -1,4 +1,4 @@
-import {CrudRepository} from './index.js';
+import CrudRepository from './crud-repository.js';
 import {Comment} from '../models/index.js';
 
 class CommentRepository extends CrudRepository {

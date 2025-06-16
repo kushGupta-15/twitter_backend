@@ -1,0 +1,18 @@
+import passport from "passport";
+
+const authenticate = (req, res, next) => {
+    passport.authenticate('jwt', (err, user) => {
+        if(err) next(err);
+        if(!user) {
+            res.status(401).json({
+                message: 'Unauthorized'
+            });
+        }
+        req.user = user;
+        next();
+    })(req, res, next);
+}
+
+export {
+    authenticate
+}
