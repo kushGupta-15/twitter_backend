@@ -1,7 +1,8 @@
 import mongoose from 'mongoose';
+import {MONGODB_URI} from './serverConfig.js'
 
 const connect = async () => {
-    await mongoose.connect('mongodb://localhost:27017/twitter_Dev');
+    await mongoose.connect(MONGODB_URI);
 }
 
 export default connect;
