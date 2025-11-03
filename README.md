@@ -11,7 +11,7 @@
 - We can like any comment also
 - Retweeting
 
-- User profile
+- User profile:
     - Name
     - Follower count
     - Bio
