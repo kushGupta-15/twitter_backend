@@ -1,15 +1,26 @@
 import { TweetService } from '../services/index.js'
+import uplaod from '../config/file-uplaod-s3-config.js';
 
-const tweetService = new TweetService()
+const tweetService = new TweetService();
+
+const singleUploader = uplaod.single('image');
 
 const createTweet = async (req, res) => {
     try {
-        const response = await tweetService.create(req.body);
-        return res.status(201).json({
-            success: true,
-            message: 'New Tweet created successfully',
-            data: response,
-            err: {}
+        singleUploader(req, res, async function (err, data) {
+            if(err) {
+                return res.status(500).json({error: err});
+            }
+            console.log('Image url is', req.file);
+            const payload = {...req.body};
+            payload.image = req.file.location;
+            const response = await tweetService.create(payload);
+            return res.status(201).json({
+                success: true,
+                message: 'Successfully created a new tweet',
+                data: response,
+                err: {}
+            });
         });
     } catch (error) {
         return res.status(500).json({
